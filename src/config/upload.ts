@@ -6,7 +6,7 @@ const uploadFolder = path.resolve(__dirname, '..', '..', 'uploads');
 
 export default {
   directory: uploadFolder,
-  store: multer.diskStorage({
+  storage: multer.diskStorage({
     destination: uploadFolder,
     filename(request, file, callback) {
       const fileHash = crypto.randomBytes(10).toString('hex');
